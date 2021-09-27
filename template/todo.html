@@ -1,60 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <!-- Font-awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- BOOTSTRAP CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <title>Document</title>
 </head>
+
 <body>
     <header>
-        <h1 class="text-center">ADD TO DO</h1>
-         <div class="d-flex justify-content-center">
-             <input type="text" placeholder="Add Todo" class="form-control w-50" >
-             <button class="btn btn-success text-uppercase m-1"><i class="fa fa-plus" aria-hidden="true"></i>
+        <h1 class="text-center"> ADD TO DO </h1>
+        <div class="d-flex justify-content-center">
+            <input  placeholder="Add Todo" class="form-control w-50">
+            <button class="btn btn-success text-uppercase m-1"><i class="fa fa-plus" aria-hidden="true"></i>
             </button>
-         </div>
+        </div>
     </header>
 
-    <hr color="grey"/>
-    <style>
-        .filter{ position: relative;}
-        .filter i{
-            position: absolute;
-            top: 10px;
-            right: 400px;
-        }
-    </style>
-    <div class="filter">
-        <input type="text" placeholder="Filter task by title " class="form-control w-50 mx-auto" >
+    <hr color="grey" />
+
+    <div class="filter border w-50 mx-auto">
+        <input type="text" placeholder="Filter task by title " class="form-control w-50 mx-auto">
         <i class="fa fa-search" aria-hidden="true"></i>
     </div>
-    
+
 
     <ul class="list-group w-75 mx-auto">
         <li class="list-group-item m-2 border">
-            <span>task number 1</span> 
+            <span>task number 1</span>
             <button class="btn btn-danger float-end"> <i class="fa fa-trash" aria-hidden="true"></i>
             </button>
         </li>
 
         <li class="list-group-item m-2 border">
-            <span>task number 2</span> 
+            <span>task number 2</span>
             <button class="btn btn-danger float-end"> <i class="fa fa-trash" aria-hidden="true"></i>
             </button>
         </li>
 
         <li class="list-group-item m-2 border">
-            <span>task number 3</span> 
+            <span>task number 3</span>
             <button class="btn btn-danger float-end"> <i class="fa fa-trash" aria-hidden="true"></i>
             </button>
         </li>
-       
-      </ul>
+
+    </ul>
 
 </body>
+
 </html>
