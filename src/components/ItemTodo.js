@@ -12,6 +12,8 @@ const ItemTodo = ({title,id,onDeleteTask}) => {
          onClick= {()=>onDeleteTask(id)}>
         <i className="fa fa-trash" aria-hidden="true" />
         </button>
+
+        
                
       </li>
             

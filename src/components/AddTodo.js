@@ -26,7 +26,14 @@ const AddTodo = (props) => {
            <button 
            className="btn btn-success text-uppercase m-1"
            onClick={()=> onAddTask()}> <i className="fa fa-plus" aria-hidden="true" /> </button>
+
+    
+
+
+
+            
          </div>
+
      </header>
     )
 }
