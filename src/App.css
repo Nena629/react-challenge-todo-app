@@ -1,6 +1,7 @@
-*{
-    background-image: url(/src/image/background.png);
-    background-size: 800px;
+body{
+    background-image: url(/src/image/background.jpg);
+    background-size: 500px;
+
 }
 
 .filter{ position: relative;}
@@ -10,4 +11,6 @@
     top: 10px;
     right: 10px;
 }
+
+
 

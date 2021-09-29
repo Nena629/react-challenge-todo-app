@@ -25,7 +25,7 @@ const App = () => {
 
   //delete task by id
   const deleteTaskById = (idTask) => {
-
+ 
     if (window.confirm("Are you sure?") === false) return;
 
     let newListTask = [...ListTask];
