@@ -1,88 +1,73 @@
-import { useRef, useState } from "react";
-import "./App.css"
-import AddTodo from "./components/AddTodo";
-import ListTodo from "./components/ListTodo";
+import React, { useState } from 'react'
+import ListText from './components/ListText'
+import AddText from './components/AddText'
+
 
 const App = () => {
+  const [Texts, setTexts] = useState([
+    { id: 1, content: "Text 1 😄" },
+    { id: 2, content: "Text 2 😄" },
+    { id: 3, content: "Text 3 😄" }
+  ])
+  //copieTexts
+  const [copieTexts, setCopieTexts] = useState([
+    { id: 1, content: "Text 1 😄" },
+    { id: 2, content: "Text 2 😄" },
+    { id: 3, content: "Text 3 😄" }
+  ])
 
-  const [ListTask, setlistTask] = useState([])
-  //we add a backup for our listTask data
-  const [ListTaskBackup, setlistTaskBackup] = useState([])
 
-  const filterTaskInput = useRef("")
 
-  const addNewTask = (newTask) => {
-    //alert(newTask)
-    if (newTask !== "") {
-      setlistTask([...ListTask, newTask])
-      //add the new value to our backup as well
-      setlistTaskBackup([...ListTaskBackup, newTask])
+  //add text
+  const addNewText = (newText) => {
+
+    if (newText !== "") {
+      setTexts([...Texts, { id: Math.random() * 100, content: newText }])
+      setCopieTexts([...Texts, newText])
     }
 
-    else alert("task title should not be empty")
-
   }
 
-  //delete task by id
-  const deleteTaskById = (idTask) => {
- 
-    if (window.confirm("Are you sure?") === false) return;
+  //delete text
+  const deleteTextById = (textId) => {
+    //are you sure 
+    if (window.confirm("Are you sure ?") === false) return
 
-    let newListTask = [...ListTask];
-    newListTask = newListTask.filter((_, index) => index !== idTask)
-    setlistTask([...newListTask])
-    //delete the value from our backup as well
-    setlistTaskBackup([...newListTask])
+    // alert(textId)
+    let newList = [...Texts]
+    //suppression fel copie 
+    newList = newList.filter((t) => t.id !== textId)
+    //update state
+    setTexts([...newList])
+    setCopieTexts([...newList])
   }
 
-  //filter tasks by title
-  const filterTasksByTitle = () => {
-    let query = filterTaskInput.current.value;
-    //test if the query is empty get the backup state
-    if (query === "") setlistTask([...ListTaskBackup])
+  const filterText = (e) => {
 
+    let input_value = e.target.value;
+
+    if (input_value === "") {
+      setTexts([...copieTexts])
+    }
     else {
-      let newListTask = [...ListTask]
-      newListTask = newListTask.filter((titleTask) => titleTask.includes(query))
-      setlistTask([...newListTask])
+      let newList = Texts.filter((t) => t.content.includes(input_value))
+      setTexts([...newList])
     }
 
   }
-
   return (
-    <>
-      <div>
-        {/*addTodo Component*/}
-        <AddTodo addTaskToList={addNewTask} />
-        <hr color="grey" />
-        <div className="filter border w-50 mx-auto">
+    <div style={{ textAlign: "center" }}>
 
-          {/*filter task input*/}
-
-          <input type="text"
-            placeholder="Filter task by title "
-            className="form-control mx-auto"
-            onKeyUp={filterTasksByTitle}
-            ref={filterTaskInput} />
-
-          <i className="fa fa-search" aria-hidden="true" />
-        </div>
-
-        {/*List Todo Component*/}
-        <ListTodo
-          list={ListTask}
-          onDeleteTask={deleteTaskById}
-        />
-
-      </div>
+      <h1>Liste de Text Application </h1>
+      {/* ADD text */}
+      <AddText addListText={addNewText} />
 
 
-    </>
+      {/* Delete text */}
+      <input onChange={filterText} placeholder="filter by title" type="search" />
+      <ListText list={Texts} onDeleteTextApp={deleteTextById} />
+    </div>
   )
 }
 
-export default App
-
-
-
-
+export default App;
