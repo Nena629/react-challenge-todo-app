@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ItemNote = () => {
+const ItemNote = ({title}) => {
     return (
         <li>
-            <span>Note 1</span>
+            <span> {title} </span>
             <button classname="btn btn-danger float-end">x</button>
         </li>
 

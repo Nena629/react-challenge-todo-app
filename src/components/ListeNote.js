@@ -1,13 +1,21 @@
 import React from 'react'
+import ItemNote from './ItemNote'
 
-const ListeNote = () => {
+const ListeNote = ({list}) => {
+
     return (
         <div>
             <ul>
-                <li>
-                    <span>Note 1</span>
-                    <button className="btn btn-danger float-end">x</button>
-                </li>
+               {/*List of itemNote*/} 
+            {list.map((note) => (
+                   <ItemNote 
+                   title={note.content}
+                   key= {note.id}
+                    />
+            )
+            )}
+            
+    
             </ul>
         </div>
 

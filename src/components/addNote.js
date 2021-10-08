@@ -1,6 +1,6 @@
 import React from 'react'
 
-const addNote = () => {
+const AddNote = () => {
     return (
         <div>
             <div style={{ margin: "30px", width: "1200px", justifyContent: "center" }}>
@@ -11,4 +11,4 @@ const addNote = () => {
     )
 }
 
-export default addNote
+export default AddNote
