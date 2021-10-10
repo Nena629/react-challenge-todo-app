@@ -17,15 +17,28 @@ const App = () => {
     { id: 3, content: "Text 3 😄" }
     ])
 
+   // Add note
     const addNewNote = (newNote) => {
 
         if (newNote !== "") {
           setNotes([...notes, { id: Math.random() * 100, content: newNote }])
           setCopieNotes([...notes, newNote])
         }
+    }
     
-      }
-    
+    // Delete note  
+    const deleteNoteById = (noteId) =>{
+     //alert are you sure 
+    if (window.confirm("Are you sure ?") === false) return
+    // alert(noteId)
+    let newList = [...notes]
+    //suppression dans la copie 
+    newList = newList.filter((t) => t.id !== noteId)
+    //update state
+    setNotes([...newList])
+    setCopieNotes([...newList])
+    }
+
     return (
         <div style={{ textAlign: "center" }}>
             <h1>Note app</h1>
@@ -37,10 +50,9 @@ const App = () => {
                 <i className="fa fa-search" aria-hidden="true" />
             </div>
         {/* listeNote*/}
-            <ListeNote list={notes} />
+            <ListeNote list={notes} onDeleteNoteApp={deleteNoteById} />
         </div>
 
     )
-}
-
+    }
 export default App
