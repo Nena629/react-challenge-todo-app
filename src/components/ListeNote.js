@@ -16,8 +16,6 @@ const ListeNote = ({list,onDeleteNoteApp}) => {
                     />
             )
             )}
-            
-    
             </ul>
         </div>
 

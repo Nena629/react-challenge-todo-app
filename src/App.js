@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import AddNote from './components/AddNote'
 import ListeNote from './components/ListeNote'
+import './App.css'
 
 const App = () => {
    
@@ -12,9 +13,9 @@ const App = () => {
     
       //copieNotes
     const [copieNotes, setCopieNotes] = useState([
-    { id: 1, content: "Text 1 😄" },
-    { id: 2, content: "Text 2 😄" },
-    { id: 3, content: "Text 3 😄" }
+    { id: 1, content: "Text 1 " },
+    { id: 2, content: "Text 2 " },
+    { id: 3, content: "Text 3 " }
     ])
 
    // Add note
@@ -39,16 +40,35 @@ const App = () => {
     setCopieNotes([...newList])
     }
 
+    // Filter note
+    const filterNote = (e) =>{
+
+     let input_value = e.target.value;
+
+        if (input_value === "") {
+          setNotes([...copieNotes])
+        }
+        else {
+          let newList = notes.filter((t) => t.content.includes(input_value))
+          setNotes([...newList])
+        }
+
+    }
+
     return (
-        <div style={{ textAlign: "center" }}>
+
+        <div className="b" style={{ textAlign: "center" }}>
             <h1>Note app</h1>
         {/* listeNote*/}
             <AddNote addListNote= {addNewNote} />
             <hr />
+
+        {/* listeNote*/}    
             <div className="filter border w-50 mx-auto">
-                <input type="text" placeholder="filter task by title" className="form-control" />
+                <input onChange={filterNote} type="text" placeholder="Filter Note by title" className="form-control" />
                 <i className="fa fa-search" aria-hidden="true" />
             </div>
+
         {/* listeNote*/}
             <ListeNote list={notes} onDeleteNoteApp={deleteNoteById} />
         </div>
