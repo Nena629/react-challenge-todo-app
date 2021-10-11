@@ -14,6 +14,7 @@ const App = () => {
             <h1>Note app</h1>
         {/* listeNote*/}
             <AddNote/>
+            
             <hr />
             <div className="filter border w-50 mx-auto">
                 <input type="text" placeholder="filter task by title" className="form-control" />
