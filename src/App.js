@@ -12,15 +12,15 @@ const App = () => {
     
       //copieNotes
     const [copieNotes, setCopieNotes] = useState([
-    { id: 1, content: "Text 1 😄" },
-    { id: 2, content: "Text 2 😄" },
-    { id: 3, content: "Text 3 😄" }
+    { id: 1, content: "note 1"},
+    { id: 2, content: "note 2"},
+    { id: 3, content: "note 3"},
     ])
 
     const addNewNote = (newNote) => {
-
-        if (newNote !== "") {
-          setNotes([...notes, { id: Math.random() * 100, content: newNote }])
+      console.log(newNote)
+         if (newNote !== "") {
+          setNotes([...notes, { id: notes.length+1, content: newNote }])
           setCopieNotes([...notes, newNote])
         }
     
