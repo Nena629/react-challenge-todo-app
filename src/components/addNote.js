@@ -1,9 +1,9 @@
 import React from 'react'
 
-const addNote = () => {
+const AddNote = () => {
     return (
         <div>
-            <div style={{ margin: "30px", width: "1200px", justifyContent: "center" }}>
+            <div style={{justifyContent: "center" }}>
                 <input type="text" placeholder="Add a Note" className="form-control" />
                 <button className="btn btn-success">+</button>
             </div>
@@ -11,4 +11,4 @@ const addNote = () => {
     )
 }
 
-export default addNote
+export default AddNote

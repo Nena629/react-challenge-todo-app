@@ -1,13 +1,15 @@
 import React from 'react'
+import AddNote from './components/addNote'
 import ListeNote from './components/ListeNote'
+import "./App.css"
 
 
 const App = () => {
     return (
-        <div style={{ textAlign: "center" }}>
+        <div className="j">
             <h1>Note app</h1>
 
-            <addNote />
+            <AddNote />
 
             <hr />
             <div className="filter border w-50 mx-auto">
