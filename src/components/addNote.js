@@ -19,7 +19,7 @@ const AddNote = ({addListNote}) => {
     <div style={{ margin: "30px", width: "1200px", justifyContent: "center" }}>
       <div className="add">
         <input
-          type="text" className="form-       control" placeholder=" write the text" ref={inputText}
+          type="text" className="form-control" placeholder=" write the text" ref={inputText}
         />
 
         <button

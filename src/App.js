@@ -22,7 +22,7 @@ const App = () => {
 
         if (newNote !== "") {
           setNotes([...notes, { id: Math.random() * 100, content: newNote }])
-          setCopieNotes([...notes, newNote])
+          setCopieNotes([...notes, { id: Math.random() * 100, content: newNote }])
         }
     }
     
