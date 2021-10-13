@@ -7,10 +7,10 @@ const AddNote = ({addListNote}) => {
   const inputText = useRef();
 
   const onAddNote = () => {
+
+      addListNote(inputText.current.value);
+      inputText.current.value ="";
     // alert(inputText.current.value)
-    if (window.confirm("are you sure ?") === true) {
-     addListNote(inputText.current.value);
-    }
   
   }
 

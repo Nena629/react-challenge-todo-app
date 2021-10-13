@@ -2,31 +2,28 @@ import React, { useState } from 'react'
 import AddNote from './components/AddNote'
 import ListeNote from './components/ListeNote'
 import './App.css'
+import { Note } from './models/Note'
 
+
+const LIST_NOTE =[
+    new Note (1,"note 1"),
+    new Note (2, "note 2")
+]
 const App = () => {
    
-    const [notes, setNotes] = useState([
-        {id: 1, content: "note 1"},
-        {id: 2, content: "note 2"}, 
-        {id: 3, content: "note 3"}
-    ])
-    
+    const [notes, setNotes] = useState(LIST_NOTE)
       //copieNotes
-    const [copieNotes, setCopieNotes] = useState([
-    { id: 1, content: "note 1" },
-    { id: 2, content: "note 2" },
-    { id: 3, content: "note 3" }
-    ])
+    const [copieNotes, setCopieNotes] = useState(LIST_NOTE)
 
    // Add note
     const addNewNote = (newNote) => {
-
-        if (newNote !== "") {
-          setNotes([...notes, { id: Math.random() * 100, content: newNote }])
-          setCopieNotes([...notes, newNote])
-        }
+      
+         let newList = [...notes,new Note (notes.length+1, newNote)]
+          setNotes([...newList])
+          setCopieNotes([...newList])
+        
     }
-    
+
     // Delete note  
     const deleteNoteById = (noteId) =>{
      //alert are you sure 
@@ -52,7 +49,7 @@ const App = () => {
           let newList = notes.filter((t) => t.content.includes(input_value))
           setNotes([...newList])
         }
-
+    
     }
 
     return (
