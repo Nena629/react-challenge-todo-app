@@ -4,22 +4,22 @@ const FuncComp = () => {
 
     const [compteur, setCompteur] = useState(0)
 
-    // equivalent a utiliser componentDidMount
+    // equivalent à utiliser componentDidMount
     useEffect(() => {
-        //partie pour cmpDM
-        console.log("hook -ComponentDidMount 😎 !!")
-        //componentWillUnmout
-        return ()=>console.log("Good By 😄 ")
+    //partie pour component DidMount
+        console.log("hook -ComponentDidMount !!")
+
+    //componentWillUnmout return+Function
+        return ()=>console.log("Good Bye component")
     }, [])
 
-    // equivalent a utiliser componentDidUpdate
+    // equivalent à utiliser componentDidUpdate
     useEffect(() => {
         if (compteur === 0) {
-            console.log("hook -componentDidUpdate 😎 !!")
+            console.log("hook -componentDidUpdate !!")
         }
     })
 
-    
     return (
         <p>
             {compteur}
